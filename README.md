@@ -140,6 +140,28 @@ DefendCore
     └── 17-Conclusion.md
 ```
 
+# Architecture Layers
+
+### Domain
+
+Contains the core business entities, repository abstractions, and security configuration models.
+
+### Application
+
+Contains application contracts and service abstractions used by higher layers.
+
+### Infrastructure
+
+Contains data access implementation, Entity Framework Core configuration, repositories, Unit of Work implementation, and security services.
+
+### API
+
+Contains middleware, request helpers, dependency registration, and application entry point.
+
+### Docs
+
+Contains detailed technical documentation explaining the architecture, design decisions, security strategies, and implementation details.
+
 ---
 
 # Security Components
