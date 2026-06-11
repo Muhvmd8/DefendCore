@@ -64,16 +64,61 @@ The module acts as an additional security layer before requests reach the applic
 ```text
 DefendCore
 │
-├── DefendCore.API
-│   ├── Middlewares
-│   ├── Extensions
-│   ├── Helpers
-│   └── Configurations
+├── DefendCore.Domain
+│   │
+│   ├── Entities
+│   │   │
+│   │   ├── Common
+│   │   │   └── BaseEntity.cs
+│   │   │
+│   │   └── Security
+│   │       ├── LoginAudit.cs
+│   │       └── BlockedIp.cs
+│   │
+│   ├── Interfaces
+│   │   ├── IGenericRepository.cs
+│   │   └── IUnitOfWork.cs
+│   │
+│   └── Settings
+│       └── IpSecuritySettings.cs
 │
 ├── DefendCore.Application
-│   ├── Contracts
-│   ├── Services
-│   └── Settings
+│   │
+│   └── Interfaces
+│       └── IIpSecurityService.cs
+│
+├── DefendCore.Infrastructure
+│   │
+│   ├── Persistence
+│   │   │
+│   │   ├── Contexts
+│   │   │   └── ApplicationDbContext.cs
+│   │   │
+│   │   ├── Repositories
+│   │   │   ├── GenericRepository.cs
+│   │   │   └── UnitOfWork.cs
+│   │   │
+│   │   └── Migrations
+│   │
+│   └── Services
+│       │
+│       └── Security
+│           └── IpSecurityService.cs
+│
+├── DefendCore.API
+│   │
+│   ├── Helpers
+│   │   └── SecurityRequestHelper.cs
+│   │
+│   ├── Middlewares
+│   │   │
+│   │   ├── Extensions
+│   │   │   └── IpSecurityMiddlewareExtension.cs
+│   │   │
+│   │   └── IpSecurityMiddleware.cs
+│   │
+│   ├── Program.cs
+│   └── appsettings.json
 │
 └── docs
     ├── 01-Introduction.md
@@ -194,6 +239,8 @@ Topics include:
 * SQL Server
 * Middleware Pipeline
 * Dependency Injection
+* Repository Pattern
+* Unit Of Work
 * Options Pattern
 
 ---
