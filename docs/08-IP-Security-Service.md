@@ -54,18 +54,7 @@ The service currently provides two core capabilities:
 * Malicious payload detection
 * Brute force attack detection
 
-```text
-Request
-   │
-   ▼
-IpSecurityService
-   │
-   ├── XSS Detection
-   │
-   ├── SQL Injection Detection
-   │
-   └── Brute Force Detection
-```
+<img width="4262" height="1255" alt="Client Authentication-2026-06-12-162416" src="https://github.com/user-attachments/assets/f61c128c-877f-4651-b120-4acd9f6a43e5" />
 
 Keeping these responsibilities inside a dedicated service prevents the middleware from becoming overloaded with business logic.
 
@@ -96,18 +85,7 @@ As additional attack detection mechanisms are introduced, they can be added with
 
 The payload inspection process follows a layered approach.
 
-```text
-Request Body
-      │
-      ▼
-ContainsMaliciousPayload()
-      │
-      ▼
-ContainsXss()
-      │
-      ▼
-ContainsSqlInjection()
-```
+<img width="1800" height="1255" alt="Client Request Flow-2026-06-12-162840" src="https://github.com/user-attachments/assets/12e8889e-20a2-4297-8ca3-e173b50f75a7" />
 
 Each method focuses on a single security concern.
 
