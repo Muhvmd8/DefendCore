@@ -5,6 +5,7 @@ using DefendCore.Domain.Settings;
 using DefendCore.Infrastructure.Presistence.DbContexts;
 using DefendCore.Infrastructure.Presistence.Repositoreis;
 using DefendCore.Infrastructure.Services.Security;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 
 namespace DefendCore.API
@@ -33,7 +34,18 @@ namespace DefendCore.API
             builder.Services.Configure<IpSecuritySettings>(builder.Configuration.GetSection(nameof(IpSecuritySettings)));
             #endregion
 
+            #region Forwarded Headers Configuration
+            builder.Services.Configure<ForwardedHeadersOptions>(options =>
+            {
+                options.ForwardedHeaders = ForwardedHeaders.XForwardedFor
+                                         | ForwardedHeaders.XForwardedProto;
+            });
+            #endregion
+
             var app = builder.Build();
+
+            // Use forwarded headers to correctly handle client IP addresses when behind a reverse proxy
+            app.UseForwardedHeaders();
 
             // Configure the HTTP request pipeline.
             app.UseSwagger();
