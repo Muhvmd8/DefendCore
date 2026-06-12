@@ -67,21 +67,10 @@ The security module is executed before requests reach controllers.
 
 This allows potentially malicious requests to be inspected and, if necessary, blocked immediately.
 
-```text
-Client Request
-       │
-       ▼
-IpSecurityMiddleware
-       │
-       ▼
-Authentication
-       │
-       ▼
-Authorization
-       │
-       ▼
-Controllers
-```
+
+<p align="center">
+     <img width="470" height="500" alt="Diagram01" src="https://github.com/user-attachments/assets/953abb4e-7d85-466d-b54a-d52aff38beb9" />
+</p>
 
 This positioning is intentional.
 
