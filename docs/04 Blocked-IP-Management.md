@@ -55,7 +55,6 @@ public class BlockedIp : BaseEntity<int>
     public DateTime? ExpiresAt { get; set; }
 }
 ```
-
 Each record represents a security decision made by the system.
 
 The table contains:
@@ -236,6 +235,8 @@ Return 403 Forbidden
        ▼
 Stop Request Processing
 ```
+
+<img width="8192" height="1702" alt="Client Request Flow-2026-06-12-161515" src="https://github.com/user-attachments/assets/4738be38-fd63-4317-8bf8-c6efd832a659" />
 
 If the IP is not blocked, the request continues through the remaining security checks.
 
