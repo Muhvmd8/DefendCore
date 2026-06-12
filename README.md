@@ -16,24 +16,9 @@ The module focuses on detecting suspicious requests, blocking malicious IPs, aud
 
 ## Architecture
 
-```text
-Client
-   │
-   ▼
-NGINX (Recommended)
-   │
-   ▼
-IpSecurityMiddleware
-   │
-   ▼
-Authentication
-   │
-   ▼
-Authorization
-   │
-   ▼
-Controllers
-```
+<p align="center">
+  <img width="500" hieght="500" src="https://github.com/user-attachments/assets/cb71820c-1b75-444f-85a7-b73649ecfa31" alt="High-Level-Architecture">
+</p>
 
 ## Project Structure
 
