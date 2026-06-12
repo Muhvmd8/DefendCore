@@ -198,15 +198,9 @@ context.Request.Body
 
 Internally, HTTP payloads arrive as a sequence of bytes.
 
-```text
-Client Request
-      │
-      ▼
-Byte Stream
-      │
-      ▼
-Request.Body
-```
+<p align="center">
+  <img width="450" height="450" src="https://github.com/user-attachments/assets/0218e027-aa74-448e-90cf-86f3c8a9833d" />
+</p>
 
 A stream is designed for forward-only reading.
 
@@ -388,38 +382,6 @@ Audit logs become an important source of information during forensic analysis.
 
 The complete workflow can be summarized as follows.
 
-```text
-Request
-   │
-   ▼
-Get Client IP
-   │
-   ▼
-Blocked IP Check
-   │
-   ▼
-Enable Buffering
-   │
-   ▼
-Read Request Body
-   │
-   ▼
-XSS Detection
-   │
-   ▼
-SQL Injection Detection
-   │
-   ▼
-Next Middleware
-   │
-   ▼
-Brute Force Detection
-   │
-   ▼
-Audit Logging
-   │
-   ▼
-Response
-```
+<img width="8192" height="615" alt="Client Authentication-2026-06-12-163904" src="https://github.com/user-attachments/assets/0c73e11f-6f11-4881-b92c-29e45dcabee8" />
 
 The middleware acts as the central coordinator of the entire security module, ensuring that suspicious requests are identified, analyzed, logged, and blocked before they can negatively impact the application.
