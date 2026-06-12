@@ -12,15 +12,7 @@ Instead, requests typically pass through one or more infrastructure components b
 
 A simplified architecture may look like this:
 
-```text
-Client
-   │
-   ▼
-NGINX Reverse Proxy
-   │
-   ▼
-ASP.NET Core API
-```
+<img width="4911" height="982" alt="Client Request Flow-2026-06-12-162033" src="https://github.com/user-attachments/assets/6ed4661c-d2cc-44d0-8f5d-a9647728aac2" />
 
 In this scenario, the incoming connection received by ASP.NET Core originates from the reverse proxy rather than the actual client.
 
