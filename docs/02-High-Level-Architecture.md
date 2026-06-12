@@ -23,30 +23,8 @@ Instead of relying on a single protection point, the application introduces secu
 
 The high-level request flow is illustrated below:
 
-```text
-Client Request
-       │
-       ▼
-NGINX Reverse Proxy
-       │
-       ▼
-ASP.NET Core Pipeline
-       │
-       ▼
-IpSecurityMiddleware
-       │
-       ▼
-Authentication
-       │
-       ▼
-Authorization
-       │
-       ▼
-Controllers
-       │
-       ▼
-Business Logic
-```
+<img width="8192" height="2284" alt="Client Request Handling-2026-06-12-161138" src="https://github.com/user-attachments/assets/14a61627-f20e-4982-94cd-4f0f370816e4" />
+
 
 Each layer is responsible for a different aspect of security.
 
